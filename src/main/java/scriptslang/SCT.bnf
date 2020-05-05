@@ -1,0 +1,26 @@
+{
+  parserClass="scriptslang.parser.SCTParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="SCT"
+  psiImplClassSuffix="Impl"
+  psiPackage="scriptslang.psi"
+  psiImplPackage="scriptslang.psi.impl"
+
+  elementTypeHolderClass="scriptslang.psi.SCTTypes"
+  elementTypeClass="scriptslang.psi.SCTElementType"
+  tokenTypeClass="scriptslang.psi.SCTTokenType"
+
+  psiImplUtilClass="scriptslang.psi.impl.SCTPsiImplUtil"
+}
+
+sctFile ::= item_*
+
+private item_ ::= (scriptfile|COMMENT|CRLF)
+
+scriptfile ::= (VALUE?) | VALUE {
+  mixin="scriptslang.psi.impl.SCTNamedElementImpl"
+ implements="scriptslang.psi.SCTNamedElement"
+  methods=[getValue getName setName getNameIdentifier]
+}

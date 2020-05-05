@@ -1,0 +1,35 @@
+{
+  parserClass="ctlang.parser.CTParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="CT"
+  psiImplClassSuffix="Impl"
+  psiPackage="ctlang.psi"
+  psiImplPackage="ctlang.psi.impl"
+
+  elementTypeHolderClass="ctlang.psi.CTTypes"
+  elementTypeClass="ctlang.psi.CTElementType"
+  tokenTypeClass="ctlang.psi.CTTokenType"
+
+  psiImplUtilClass="ctlang.psi.impl.CTPsiImplUtil"
+
+}
+
+ctFile ::= item_*
+
+private item_ ::= (command|COMMENT|CRLF)
+
+//command ::= (STRING props STRING | STRING props | STRING )
+
+command ::= ( command_part [(props)*] ) | command_part
+
+command_part ::= STRING
+
+private props ::= SEPARATOR property* SEPARATOR [STRING]
+
+property ::= ( KEY PROPERTY_SEPARATOR? VALUE? [PARAMETER_SEPARATOR] ) | KEY {
+  mixin="ctlang.psi.impl.CTNamedElementImpl"
+  implements="ctlang.psi.CTNamedElement"
+  methods=[getKey getValue getName setName getNameIdentifier]
+}

@@ -1,0 +1,111 @@
+<idea-plugin>
+  <id>com.fortegrp.keywordautomation</id>
+  <name>Colibri Test Automation</name>
+  <version>1.1</version>
+  <vendor email="olex.dyachuk@fortegrp.com.com" url="http://www.fortegrp.com">ForteGRP</vendor>
+
+  <description>Colibri Test Automation Plugin for keyword-based framework</description>
+
+  <change-notes>Colibri Test Automation Plugin for keyword-based framework</change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="PROP File" implementationClass="proplang.PropFileType"
+              fieldName="INSTANCE" language="PROP" extensions="prop"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.parserDefinition language="PROP"
+                           implementationClass="proplang.PropParserDefinition"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.syntaxHighlighterFactory language="PROP"
+                                   implementationClass="proplang.PropSyntaxHighlighterFactory"/>
+  </extensions>
+
+<!--  <extensions defaultExtensionNs="com.intellij">-->
+<!--    <completion.contributor language="PROP"-->
+<!--                            implementationClass="proplang.PropCompletionContributor"/>-->
+<!--  </extensions>-->
+
+<!--  <extensions defaultExtensionNs="com.intellij">-->
+<!--    <annotator language="PROP" implementationClass="proplang.PropAnnotator"/>-->
+<!--  </extensions>-->
+
+<!--  <extensions defaultExtensionNs="com.intellij">-->
+<!--    <psi.referenceContributor implementation="proplang.CTReferenceContributor"/>-->
+<!--  </extensions>-->
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="CT File" implementationClass="ctlang.CTFileType"
+              fieldName="INSTANCE" language="CT" extensions="ct"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.parserDefinition language="CT"
+                           implementationClass="ctlang.CTParserDefinition"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.syntaxHighlighterFactory language="CT"
+                                   implementationClass="ctlang.CTSyntaxHighlighterFactory"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <completion.contributor language="CT"
+                            implementationClass="ctlang.CTCompletionContributor"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <annotator language="CT" implementationClass="ctlang.CTAnnotator"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <psi.referenceContributor implementation="ctlang.CTReferenceContributor"/>
+  </extensions>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="CT Script File" implementationClass="scriptslang.SCTFileType"
+              fieldName="INSTANCE" language="SCT" extensions="sct"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.parserDefinition language="SCT"
+                           implementationClass="scriptslang.SCTParserDefinition"/>
+  </extensions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <lang.syntaxHighlighterFactory language="SCT"
+                                   implementationClass="scriptslang.SCTSyntaxHighlighterFactory"/>
+  </extensions>
+
+    <extensions defaultExtensionNs="com.intellij">
+      <annotator language="SCT" implementationClass="scriptslang.SCTAnnotator"/>
+    </extensions>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <completion.contributor language="SCT"
+                            implementationClass="scriptslang.SCTCompletionContributor"/>
+  </extensions>
+
+<!--  <extensions defaultExtensionNs="com.intellij">-->
+<!--    <psi.referenceContributor implementation="scriptslang.SCTReferenceContributor"/>-->
+<!--  </extensions>-->
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>

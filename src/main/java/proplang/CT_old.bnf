@@ -1,0 +1,26 @@
+{
+  parserClass="proplang.parser.PropParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Prop"
+  psiImplClassSuffix="Impl"
+  psiPackage="proplang.psi"
+  psiImplPackage="proplang.psi.impl"
+
+  elementTypeHolderClass="proplang.psi.PropTypes"
+  elementTypeClass="proplang.psi.PropElementType"
+  tokenTypeClass="proplang.psi.PropTokenType"
+
+  psiImplUtilClass="proplang.psi.impl.PropPsiImplUtil"
+}
+
+propFile ::= item_*
+
+private item_ ::= (prop|COMMENT|CRLF)
+
+prop ::= (KEY? SEPARATOR VALUE?) | KEY {
+  mixin="proplang.psi.impl.PropNamedElementImpl"
+  implements="proplang.psi.PropNamedElement"
+  methods=[getKey getValue getName setName getNameIdentifier]
+}
