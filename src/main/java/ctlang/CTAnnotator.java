@@ -119,7 +119,7 @@ public class CTAnnotator implements Annotator {
     }
 
     private void processCommand(PsiElement element, AnnotationHolder holder) {
-        String value = element.getText().replace("Optional ", "");
+        String value = element.getText().replace("Optional ", "").replace("Final ", "");
 
         if ((value == null)) return;
         TextRange keyRange = new TextRange(element.getTextRange().getStartOffset(), element.getTextRange().getEndOffset());
