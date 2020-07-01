@@ -6,6 +6,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
 import com.intellij.psi.impl.java.stubs.index.JavaStubIndexKeys;
 import com.intellij.psi.search.FileTypeIndex;
+import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.stubs.StubIndexImpl;
 import com.intellij.psi.util.PsiTreeUtil;
@@ -13,6 +14,8 @@ import proplang.PropFileType;
 import proplang.psi.PropProp;
 import proplang.psi.impl.PropPropImpl;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -160,6 +163,55 @@ public class CTUtil {
                 if (child instanceof PsiLiteralExpression){
                     results.add((PsiLiteralExpression)child);
                     break;
+                }
+            }
+        }
+        return results;
+    }
+
+    public static List<String> findTags(Project project, String possibleProperties) {
+        ArrayList<String> results = new ArrayList<>();
+
+        Collection<VirtualFile> virtualFiles =
+                FilenameIndex.getVirtualFilesByName(    project,    "project.tags",    false,    GlobalSearchScope.allScope(project));
+        for (VirtualFile virtualFile : virtualFiles) {
+            String content = "";
+            FileInputStream fi;
+            if (virtualFile != null) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                        (virtualFile.getInputStream()), StandardCharsets.UTF_8));) {
+
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        if(possibleProperties.toLowerCase().equals(line.toLowerCase()))
+                            results.add(line);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return results;
+    }
+
+    public static List<String> findTags(Project project) {
+        ArrayList<String> results = new ArrayList<>();
+
+        Collection<VirtualFile> virtualFiles =
+                FilenameIndex.getVirtualFilesByName(    project,    "project.tags",    false,    GlobalSearchScope.allScope(project));
+        for (VirtualFile virtualFile : virtualFiles) {
+            String content = "";
+            FileInputStream fi;
+            if (virtualFile != null) {
+                try (BufferedReader br = new BufferedReader(new InputStreamReader(
+                        (virtualFile.getInputStream()), StandardCharsets.UTF_8));) {
+
+                    String line;
+                    while ((line = br.readLine()) != null) {
+                        results.add(line);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
             }
         }

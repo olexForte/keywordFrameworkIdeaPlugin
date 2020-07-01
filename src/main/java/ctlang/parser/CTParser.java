@@ -36,14 +36,14 @@ public class CTParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // ( command_part [(props)*] ) | command_part
+  // ( command_part [(props)*]) | (command_part)
   public static boolean command(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "command")) return false;
     if (!nextTokenIs(b, STRING)) return false;
     boolean r;
     Marker m = enter_section_(b);
     r = command_0(b, l + 1);
-    if (!r) r = command_part(b, l + 1);
+    if (!r) r = command_1(b, l + 1);
     exit_section_(b, m, COMMAND, r);
     return r;
   }
@@ -87,6 +87,16 @@ public class CTParser implements PsiParser, LightPsiParser {
     return r;
   }
 
+  // (command_part)
+  private static boolean command_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "command_1")) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = command_part(b, l + 1);
+    exit_section_(b, m, null, r);
+    return r;
+  }
+
   /* ********************************************************** */
   // STRING
   public static boolean command_part(PsiBuilder b, int l) {
@@ -112,12 +122,13 @@ public class CTParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // command|COMMENT|CRLF
+  // command|COMMENT|tags|CRLF
   static boolean item_(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "item_")) return false;
     boolean r;
     r = command(b, l + 1);
     if (!r) r = consumeToken(b, COMMENT);
+    if (!r) r = tags(b, l + 1);
     if (!r) r = consumeToken(b, CRLF);
     return r;
   }
@@ -170,68 +181,79 @@ public class CTParser implements PsiParser, LightPsiParser {
   }
 
   /* ********************************************************** */
-  // (SEPARATOR property* SEPARATOR [STRING]) | (SEPARATOR property* SEPARATOR)
+  // SEPARATOR property* SEPARATOR [STRING]
   static boolean props(PsiBuilder b, int l) {
     if (!recursion_guard_(b, l, "props")) return false;
     if (!nextTokenIs(b, SEPARATOR)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = props_0(b, l + 1);
-    if (!r) r = props_1(b, l + 1);
-    exit_section_(b, m, null, r);
-    return r;
-  }
-
-  // SEPARATOR property* SEPARATOR [STRING]
-  private static boolean props_0(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "props_0")) return false;
-    boolean r;
-    Marker m = enter_section_(b);
     r = consumeToken(b, SEPARATOR);
-    r = r && props_0_1(b, l + 1);
+    r = r && props_1(b, l + 1);
     r = r && consumeToken(b, SEPARATOR);
-    r = r && props_0_3(b, l + 1);
+    r = r && props_3(b, l + 1);
     exit_section_(b, m, null, r);
     return r;
   }
 
   // property*
-  private static boolean props_0_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "props_0_1")) return false;
+  private static boolean props_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "props_1")) return false;
     while (true) {
       int c = current_position_(b);
       if (!property(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "props_0_1", c)) break;
+      if (!empty_element_parsed_guard_(b, "props_1", c)) break;
     }
     return true;
   }
 
   // [STRING]
-  private static boolean props_0_3(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "props_0_3")) return false;
+  private static boolean props_3(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "props_3")) return false;
     consumeToken(b, STRING);
     return true;
   }
 
-  // SEPARATOR property* SEPARATOR
-  private static boolean props_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "props_1")) return false;
+  /* ********************************************************** */
+  // STRING [TAG_SEPARATOR]
+  public static boolean tag(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "tag")) return false;
+    if (!nextTokenIs(b, STRING)) return false;
     boolean r;
     Marker m = enter_section_(b);
-    r = consumeToken(b, SEPARATOR);
-    r = r && props_1_1(b, l + 1);
-    r = r && consumeToken(b, SEPARATOR);
-    exit_section_(b, m, null, r);
+    r = consumeToken(b, STRING);
+    r = r && tag_1(b, l + 1);
+    exit_section_(b, m, TAG, r);
     return r;
   }
 
-  // property*
-  private static boolean props_1_1(PsiBuilder b, int l) {
-    if (!recursion_guard_(b, l, "props_1_1")) return false;
+  // [TAG_SEPARATOR]
+  private static boolean tag_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "tag_1")) return false;
+    consumeToken(b, TAG_SEPARATOR);
+    return true;
+  }
+
+  /* ********************************************************** */
+  // TAGSLABEL tag* TAGSLABEL
+  public static boolean tags(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "tags")) return false;
+    if (!nextTokenIs(b, TAGSLABEL)) return false;
+    boolean r;
+    Marker m = enter_section_(b);
+    r = consumeToken(b, TAGSLABEL);
+    r = r && tags_1(b, l + 1);
+    r = r && consumeToken(b, TAGSLABEL);
+    exit_section_(b, m, TAGS, r);
+    return r;
+  }
+
+  // tag*
+  private static boolean tags_1(PsiBuilder b, int l) {
+    if (!recursion_guard_(b, l, "tags_1")) return false;
     while (true) {
       int c = current_position_(b);
-      if (!property(b, l + 1)) break;
-      if (!empty_element_parsed_guard_(b, "props_1_1", c)) break;
+      if (!tag(b, l + 1)) break;
+      if (!empty_element_parsed_guard_(b, "tags_1", c)) break;
     }
     return true;
   }

@@ -19,6 +19,14 @@ public class CTVisitor extends PsiElementVisitor {
     visitNamedElement(o);
   }
 
+  public void visitTag(@NotNull CTTag o) {
+    visitPsiElement(o);
+  }
+
+  public void visitTags(@NotNull CTTags o) {
+    visitPsiElement(o);
+  }
+
   public void visitNamedElement(@NotNull CTNamedElement o) {
     visitPsiElement(o);
   }

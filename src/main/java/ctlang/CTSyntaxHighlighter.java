@@ -24,8 +24,10 @@ public class CTSyntaxHighlighter extends SyntaxHighlighterBase {
             createTextAttributesKey("CT_COMMENT", DefaultLanguageHighlighterColors.LINE_COMMENT);
     public static final TextAttributesKey BAD_CHARACTER =
             createTextAttributesKey("CT_BAD_CHARACTER", HighlighterColors.BAD_CHARACTER);
+    public static final TextAttributesKey TAGS =
+            createTextAttributesKey("CT_TAGS", DefaultLanguageHighlighterColors.CONSTANT);
 
-
+    private static final TextAttributesKey[] TAGS_KEYS = new TextAttributesKey[]{TAGS};
     private static final TextAttributesKey[] BAD_CHAR_KEYS = new TextAttributesKey[]{BAD_CHARACTER};
     private static final TextAttributesKey[] SEPARATOR_KEYS = new TextAttributesKey[]{SEPARATOR};
     private static final TextAttributesKey[] KEY_KEYS = new TextAttributesKey[]{KEY};
@@ -50,6 +52,8 @@ public class CTSyntaxHighlighter extends SyntaxHighlighterBase {
             return VALUE_KEYS;
         } else if (tokenType.equals(CTTypes.COMMENT)) {
             return COMMENT_KEYS;
+        } else if (tokenType.equals(CTTypes.TAGS)) {
+            return TAGS_KEYS;
         } else if (tokenType.equals(TokenType.BAD_CHARACTER)) {
             return BAD_CHAR_KEYS;
         } else {

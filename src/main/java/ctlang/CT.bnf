@@ -18,11 +18,15 @@
 
 ctFile ::= item_*
 
-private item_ ::= (command|COMMENT|CRLF)
+private item_ ::= (command|COMMENT|tags|CRLF)
+
+tags ::= (TAGSLABEL tag* TAGSLABEL)
+
+tag ::= (STRING [TAG_SEPARATOR])
 
 //command ::= (STRING props STRING | STRING props | STRING )
 
-command ::= ( command_part [(props)*] ) | command_part
+command ::= ( command_part [(props)*]) | (command_part)
 
 command_part ::= STRING
 

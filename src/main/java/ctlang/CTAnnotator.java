@@ -10,14 +10,14 @@ import com.intellij.psi.PsiElement;
 //import ctlang.CTCreatePropertyQuickFix;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
-import com.intellij.psi.util.PsiUtil;
-import ctlang.psi.CTCommand;
-import ctlang.psi.CTCommandPart;
-import ctlang.psi.CTProperty;
+import com.intellij.psi.TokenType;
+import com.intellij.psi.tree.IElementType;
+import ctlang.psi.*;
 import org.jetbrains.annotations.NotNull;
 import proplang.psi.PropProp;
 import scriptslang.SCTUtil;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 
@@ -27,6 +27,12 @@ public class CTAnnotator implements Annotator {
     public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
         // Ensure the Psi Element is an expression
         //if (!(element instanceof PsiLiteralExpression)) return;
+
+        if (element instanceof CTTag) {
+            System.out.println("TAG - " + element.getText());
+            processTag(element, holder);
+            return;
+        }
 
         if (element instanceof CTCommandPart) {
             System.out.println("CommandPart - " + element.getText());
@@ -102,8 +108,8 @@ public class CTAnnotator implements Annotator {
             List<PropProp> properties = CTUtil.findProperties(project, element);
 
             // Set the annotations using the text ranges.
-            Annotation keyAnnotation = holder.createInfoAnnotation(keyRange, null);
-            keyAnnotation.setTextAttributes(DefaultLanguageHighlighterColors.KEYWORD);
+//            Annotation keyAnnotation = holder.createInfoAnnotation(keyRange, null);
+//            keyAnnotation.setTextAttributes(DefaultLanguageHighlighterColors.KEYWORD);
 
             if (properties == null || properties.isEmpty()) {
                 // No well-formed property found following the key-separator
@@ -113,7 +119,7 @@ public class CTAnnotator implements Annotator {
             } else {
                 // Found at least one property
                 Annotation annotation = holder.createInfoAnnotation(keyRange, null);
-                annotation.setTextAttributes(CTSyntaxHighlighter.KEY);
+                annotation.setTextAttributes(CTSyntaxHighlighter.VALUE);
             }
         }
     }
@@ -130,8 +136,8 @@ public class CTAnnotator implements Annotator {
         List<PsiFile> commandsFromFiles = SCTUtil.findStoryFiles(project, possibleProperties.replace(" ", "_"));
 
         // Set the annotations using the text ranges.
-        Annotation keyAnnotation = holder.createInfoAnnotation(keyRange, null);
-        keyAnnotation.setTextAttributes(DefaultLanguageHighlighterColors.KEYWORD);
+//        Annotation keyAnnotation = holder.createInfoAnnotation(keyRange, null);
+//        keyAnnotation.setTextAttributes(DefaultLanguageHighlighterColors.KEYWORD);
         if (commands.isEmpty() && commandsFromFiles.isEmpty()) {
             // No well-formed property found following the key-separator
             Annotation badProperty = holder.createErrorAnnotation(keyRange, "Command/Action not found");
@@ -139,9 +145,32 @@ public class CTAnnotator implements Annotator {
         } else {
             // Found at least one property
             Annotation annotation = holder.createInfoAnnotation(keyRange, null);
-            annotation.setTextAttributes(CTSyntaxHighlighter.VALUE);
+            annotation.setTextAttributes(CTSyntaxHighlighter.KEY);
         }
     }
 
+    private void processTag(PsiElement element, AnnotationHolder holder){
+        String value = element.getText().replace(",","");
+
+        if ((value == null)) return;
+        TextRange keyRange = new TextRange(element.getTextRange().getStartOffset(), element.getTextRange().getEndOffset());
+
+        String possibleProperties = value.trim();
+        Project project = element.getProject();
+        List<String> tags =  CTUtil.findTags(project, possibleProperties);
+
+        // Set the annotations using the text ranges.
+//        Annotation keyAnnotation = holder.createInfoAnnotation(keyRange, null);
+//        keyAnnotation.setTextAttributes(DefaultLanguageHighlighterColors.KEYWORD);
+        if (tags.isEmpty()) {
+            // No well-formed property found following the key-separator
+            Annotation badProperty = holder.createErrorAnnotation(keyRange, "Tag not found");
+            badProperty.setTextAttributes(CTSyntaxHighlighter.BAD_CHARACTER);
+        } else {
+            // Found at least one property
+            Annotation annotation = holder.createInfoAnnotation(keyRange, null);
+            annotation.setTextAttributes(CTSyntaxHighlighter.TAGS);
+        }
+    }
 }
 
