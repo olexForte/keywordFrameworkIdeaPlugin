@@ -7,6 +7,7 @@ import com.intellij.util.ProcessingContext;
 import ctlang.psi.CTCommand;
 import ctlang.psi.CTCommandPart;
 import ctlang.psi.CTProperty;
+import ctlang.psi.CTTag;
 import org.jetbrains.annotations.NotNull;
 import proplang.PropReference;
 import proplang.psi.PropProp;
@@ -75,6 +76,21 @@ public class CTReferenceContributor extends PsiReferenceContributor {
                     }
                 });
 
-
+        registrar.registerReferenceProvider(PlatformPatterns.psiElement(CTTag.class),
+                new PsiReferenceProvider() {
+                    @NotNull
+                    @Override
+                    public PsiReference[] getReferencesByElement(@NotNull PsiElement element,
+                                                                 @NotNull ProcessingContext context) {
+                        String value = element.getText() instanceof String ?
+                                (String) element.getText() : null;
+                        if (value != null) {
+                            TextRange range = new TextRange(0,
+                                    value.length());
+                            return new PsiReference[]{new CTTagReference(element, range)};
+                        }
+                        return PsiReference.EMPTY_ARRAY;
+                    }
+                });
     }
 }

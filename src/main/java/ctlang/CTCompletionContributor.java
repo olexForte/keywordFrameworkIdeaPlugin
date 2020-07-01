@@ -8,6 +8,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.util.ProcessingContext;
 import ctlang.psi.CTCommandPart;
+import ctlang.psi.CTTag;
 import ctlang.psi.CTTypes;
 import org.jetbrains.annotations.NotNull;
 import proplang.psi.PropProp;
@@ -91,6 +92,21 @@ public class CTCompletionContributor extends CompletionContributor {
                             List<PsiFile> items = SCTUtil.findStoryFiles(parameters.getPosition().getProject());
                             for(PsiFile item : items)
                                 resultSet.addElement(LookupElementBuilder.create(item));
+                    }
+                }
+        );
+
+        extend( CompletionType.BASIC,
+                PlatformPatterns.psiElement(CTTypes.TAG).withLanguage(CTLanguage.INSTANCE),
+                new CompletionProvider<CompletionParameters>() {
+                    public void addCompletions(@NotNull CompletionParameters parameters,
+                                               @NotNull ProcessingContext context,
+                                               @NotNull CompletionResultSet resultSet) {
+                        PsiElement key = parameters.getPosition();
+                        List<String> all = CTUtil.findTags(parameters.getPosition().getProject());
+                        for (String item : all)
+                            resultSet.addElement(LookupElementBuilder.create(item));
+
                     }
                 }
         );
