@@ -76,7 +76,7 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="CT Script File" implementationClass="scriptslang.SCTFileType"
+    <fileType name="CT Suite File" implementationClass="scriptslang.SCTFileType"
               fieldName="INSTANCE" language="SCT" extensions="sct"/>
   </extensions>
 

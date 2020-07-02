@@ -17,13 +17,13 @@ public class SCTFileType extends LanguageFileType {
     @NotNull
     @Override
     public String getName() {
-        return "CT Script File";
+        return "CT Suite File";
     }
 
     @NotNull
     @Override
     public String getDescription() {
-        return "CT Script file";
+        return "CT Suite file";
     }
 
     @NotNull
