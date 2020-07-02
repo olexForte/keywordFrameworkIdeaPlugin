@@ -24,7 +24,7 @@ public class CTTagReference extends PsiReferenceBase<PsiElement> implements PsiP
 
     public CTTagReference(@NotNull PsiElement element, TextRange textRange) {
         super(element, textRange);
-        key = element.getText().substring(textRange.getStartOffset(), textRange.getEndOffset());
+        key = element.getText().substring(textRange.getStartOffset(), textRange.getEndOffset()).replace(",","").trim();
     }
 
     @NotNull
@@ -35,10 +35,12 @@ public class CTTagReference extends PsiReferenceBase<PsiElement> implements PsiP
 
         final List<PsiFile> actions= new ArrayList();
         Collection<VirtualFile> virtualFiles =
-                FilenameIndex.getVirtualFilesByName(    project,    "project.tags",    false,    GlobalSearchScope.allScope(project));
-       virtualFiles.stream().map(f -> PsiManager.getInstance(project).findFile(f)).map(f -> results.add(new PsiElementResolveResult(f)));
+                FilenameIndex.getVirtualFilesByName(    project,    CTLanguage.TAGS_FILE,    false,    GlobalSearchScope.allScope(project));
+       //virtualFiles.stream().map(f -> PsiManager.getInstance(project).findFile(f)).map(f -> results.add(new PsiElementResolveResult(f)));
         //PsiAnnotationConstantValue l = (PsiAnnotationConstantValue)((PsiAnnotationImpl) property.getParent().getFirstChild().getFirstChild()).getAttributes().get(0).getAttributeValue();
         //l.getConstantValue()
+        results.add(new PsiElementResolveResult(virtualFiles.stream().map(f -> PsiManager.getInstance(project).findFile(f)).toArray(size -> new PsiFile[size])[0]));
+
         return results.toArray(new ResolveResult[results.size()]);
     }
 

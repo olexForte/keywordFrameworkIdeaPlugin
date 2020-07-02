@@ -16,10 +16,9 @@ import proplang.psi.impl.PropPropImpl;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 public class CTUtil {
 
@@ -171,24 +170,16 @@ public class CTUtil {
 
     public static List<String> findTags(Project project, String possibleProperties) {
         ArrayList<String> results = new ArrayList<>();
-
         Collection<VirtualFile> virtualFiles =
-                FilenameIndex.getVirtualFilesByName(    project,    "project.tags",    false,    GlobalSearchScope.allScope(project));
+                FilenameIndex.getVirtualFilesByName(    project,    CTLanguage.TAGS_FILE,    false,    GlobalSearchScope.allScope(project));
         for (VirtualFile virtualFile : virtualFiles) {
-            String content = "";
-            FileInputStream fi;
-            if (virtualFile != null) {
-                try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                        (virtualFile.getInputStream()), StandardCharsets.UTF_8));) {
+           if (virtualFile != null) {
+               PsiFile ctFile = PsiManager.getInstance(project).findFile(virtualFile);
 
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        if(possibleProperties.toLowerCase().equals(line.toLowerCase()))
-                            results.add(line);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+               for(String line : ctFile.getText().split("\n")){
+                   if(possibleProperties.equals(line))
+                       results.add(line);
+               }
             }
         }
         return results;
@@ -198,22 +189,14 @@ public class CTUtil {
         ArrayList<String> results = new ArrayList<>();
 
         Collection<VirtualFile> virtualFiles =
-                FilenameIndex.getVirtualFilesByName(    project,    "project.tags",    false,    GlobalSearchScope.allScope(project));
+                FilenameIndex.getVirtualFilesByName(    project,    CTLanguage.TAGS_FILE,    false,    GlobalSearchScope.allScope(project));
         for (VirtualFile virtualFile : virtualFiles) {
-            String content = "";
-            FileInputStream fi;
-            if (virtualFile != null) {
-                try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                        (virtualFile.getInputStream()), StandardCharsets.UTF_8));) {
-
-                    String line;
-                    while ((line = br.readLine()) != null) {
-                        results.add(line);
+                    if (virtualFile != null) {
+                        PsiFile ctFile = PsiManager.getInstance(project).findFile(virtualFile);
+                        for(String line : ctFile.getText().split("\n")){
+                                results.add(line);
+                        }
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
         }
         return results;
     }

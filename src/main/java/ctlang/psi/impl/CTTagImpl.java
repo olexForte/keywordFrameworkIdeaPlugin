@@ -1,6 +1,8 @@
 // This is a generated file. Not intended for manual editing.
 package ctlang.psi.impl;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import com.intellij.psi.PsiReference;
@@ -29,8 +31,20 @@ public class CTTagImpl extends ASTWrapperPsiElement implements CTTag {
     else super.accept(visitor);
   }
 
+//  @Override
+//  public void subtreeChanged() {
+//    super.subtreeChanged();
+//  }
+
   @Override
   public PsiReference[] getReferences() {
     return ReferenceProvidersRegistry.getReferencesFromProviders(this);
   }
+
+  @Override
+  public PsiReference getReference() {
+    PsiReference[] references = getReferences();
+    return references.length == 0 ? null : references[0];
+  }
+
 }
