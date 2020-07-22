@@ -2,17 +2,11 @@ package ctlang;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
-import com.intellij.lang.jvm.annotation.JvmAnnotationAttributeValue;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
-import com.intellij.psi.impl.source.tree.java.PsiAnnotationImpl;
-import ctlang.psi.CTCommand;
-import proplang.PropIcons;
-import proplang.psi.PropProp;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import scriptslang.SCTUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +28,7 @@ public class CTCommandReference extends PsiReferenceBase<PsiElement> implements 
         for (PsiLiteralExpression property : properties) {
             results.add(new PsiElementResolveResult(property));
         }
-        final List<PsiFile> actions = SCTUtil.findStoryFiles(project, key.trim().replace(" ", "_"));
+        final List<PsiFile> actions = CTUtil.findActionFiles(project, key.trim().replace(" ", "_"));
         for (PsiFile action : actions) {
             results.add(new PsiElementResolveResult(action));
         }
@@ -67,7 +61,7 @@ public class CTCommandReference extends PsiReferenceBase<PsiElement> implements 
             }
         }
 
-        List<PsiFile> items = SCTUtil.findStoryFiles(project);
+        List<PsiFile> items = CTUtil.findActionFiles(project);
         for (final PsiFile item : items) {
                 variants.add(LookupElementBuilder
                         .create(item.getVirtualFile().getNameWithoutExtension().replace("_", " ")).withIcon(CTIcons.FILE).withCaseSensitivity(false)

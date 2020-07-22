@@ -1,12 +1,12 @@
 <idea-plugin>
   <id>com.fortegrp.keywordautomation</id>
-  <name>Colibri Test Automation</name>
-  <version>1.3</version>
+  <name>Forte Test Automation</name>
+  <version>1.5</version>
   <vendor email="olex.dyachuk@fortegrp.com.com" url="http://www.fortegrp.com">ForteGRP</vendor>
 
-  <description>Colibri Test Automation Plugin for keyword-based framework</description>
+  <description>Forte Test Automation Plugin for keyword-based framework</description>
 
-  <change-notes>Colibri Test Automation Plugin for keyword-based framework</change-notes>
+  <change-notes>Forte Test Automation Plugin for keyword-based framework</change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>
@@ -49,6 +49,10 @@
   <extensions defaultExtensionNs="com.intellij">
     <fileType name="CT File" implementationClass="ctlang.CTFileType"
               fieldName="INSTANCE" language="CT" extensions="ct"/>
+  </extensions>
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Action CT File" implementationClass="ctlang.ACTFileType"
+              fieldName="INSTANCE" language="CT" extensions="act"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">

@@ -3,21 +3,16 @@ package ctlang;
 import com.intellij.lang.annotation.Annotation;
 import com.intellij.lang.annotation.AnnotationHolder;
 import com.intellij.lang.annotation.Annotator;
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
 //import ctlang.CTCreatePropertyQuickFix;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
-import com.intellij.psi.TokenType;
-import com.intellij.psi.tree.IElementType;
 import ctlang.psi.*;
 import org.jetbrains.annotations.NotNull;
 import proplang.psi.PropProp;
-import scriptslang.SCTUtil;
 
-import java.io.FileNotFoundException;
 import java.util.List;
 
 
@@ -133,7 +128,7 @@ public class CTAnnotator implements Annotator {
         String possibleProperties = value.trim();
         Project project = element.getProject();
         List<PsiLiteralExpression> commands =  CTUtil.findCommands(project, possibleProperties);
-        List<PsiFile> commandsFromFiles = SCTUtil.findStoryFiles(project, possibleProperties.replace(" ", "_"));
+        List<PsiFile> commandsFromFiles = CTUtil.findActionFiles(project, possibleProperties.replace(" ", "_"));
 
         // Set the annotations using the text ranges.
 //        Annotation keyAnnotation = holder.createInfoAnnotation(keyRange, null);

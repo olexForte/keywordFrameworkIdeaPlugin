@@ -7,12 +7,9 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.util.ProcessingContext;
-import ctlang.psi.CTCommandPart;
-import ctlang.psi.CTTag;
 import ctlang.psi.CTTypes;
 import org.jetbrains.annotations.NotNull;
 import proplang.psi.PropProp;
-import scriptslang.SCTUtil;
 
 import java.util.List;
 
@@ -89,7 +86,7 @@ public class CTCompletionContributor extends CompletionContributor {
                             for(PsiLiteralExpression item : all)
                                 resultSet.addElement(LookupElementBuilder.create(item));
 
-                            List<PsiFile> items = SCTUtil.findStoryFiles(parameters.getPosition().getProject());
+                            List<PsiFile> items = CTUtil.findActionFiles(parameters.getPosition().getProject());
                             for(PsiFile item : items)
                                 resultSet.addElement(LookupElementBuilder.create(item));
                     }

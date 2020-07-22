@@ -177,8 +177,8 @@ public class CTUtil {
                PsiFile ctFile = PsiManager.getInstance(project).findFile(virtualFile);
 
                for(String line : ctFile.getText().split("\n")){
-                   if(possibleProperties.equals(line))
-                       results.add(line);
+                   if(possibleProperties.toLowerCase().equals(line.toLowerCase()))
+                       results.add(line.toLowerCase());
                }
             }
         }
@@ -194,10 +194,35 @@ public class CTUtil {
                     if (virtualFile != null) {
                         PsiFile ctFile = PsiManager.getInstance(project).findFile(virtualFile);
                         for(String line : ctFile.getText().split("\n")){
-                                results.add(line);
+                                results.add(line.toLowerCase());
                         }
                     }
         }
         return results;
+    }
+
+    public static List<PsiFile> findActionFiles(Project project, String key) {
+        List<PsiFile> result = new ArrayList<>();
+
+        Collection<VirtualFile> virtualFiles =
+                FileTypeIndex.getFiles(ACTFileType.INSTANCE, GlobalSearchScope.allScope(project));
+        for (VirtualFile virtualFile : virtualFiles) {
+            PsiFile ctFile = (PsiFile) PsiManager.getInstance(project).findFile(virtualFile);
+            if(virtualFile.getNameWithoutExtension().equals(key))
+                result.add(ctFile);
+        }
+        return result;
+    }
+
+    public static List<PsiFile> findActionFiles(Project project) {
+        List<PsiFile> result = new ArrayList<>();
+
+        Collection<VirtualFile> virtualFiles =
+                FileTypeIndex.getFiles(ACTFileType.INSTANCE, GlobalSearchScope.allScope(project));
+        for (VirtualFile virtualFile : virtualFiles) {
+            PsiFile ctFile = (PsiFile) PsiManager.getInstance(project).findFile(virtualFile);
+            result.add(ctFile);
+        }
+        return result;
     }
 }
