@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.fortegrp.keywordautomation</id>
   <name>Forte Test Automation</name>
-  <version>1.5</version>
+  <version>1.6</version>
   <vendor email="olex.dyachuk@fortegrp.com.com" url="http://www.fortegrp.com">ForteGRP</vendor>
 
   <description>Forte Test Automation Plugin for keyword-based framework</description>
