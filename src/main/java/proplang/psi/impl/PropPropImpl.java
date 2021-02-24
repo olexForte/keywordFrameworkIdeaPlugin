@@ -3,6 +3,7 @@ package proplang.psi.impl;
 
 import java.util.List;
 
+import com.intellij.navigation.ItemPresentation;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.impl.source.resolve.reference.ReferenceProvidersRegistry;
 import org.jetbrains.annotations.*;
@@ -12,8 +13,11 @@ import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
 import static proplang.psi.PropTypes.*;
 
+import proplang.PropIcons;
 import proplang.PropNamedElementImpl;
 import proplang.psi.*;
+
+import javax.swing.*;
 
 public class PropPropImpl extends PropNamedElementImpl implements PropProp {
 
@@ -59,4 +63,28 @@ public class PropPropImpl extends PropNamedElementImpl implements PropProp {
   public PsiReference[] getReferences() {
     return ReferenceProvidersRegistry.getInstance().getReferencesFromProviders(this);
   }
+
+  @Override
+  public ItemPresentation getPresentation() {
+    return new ItemPresentation() {
+      @Override
+      public
+      @Nullable String getPresentableText() {
+        return getName();
+      }
+
+      @Override
+      public
+      @Nullable String getLocationString() {
+        return getContainingFile().getVirtualFile().getPath();
+      }
+
+      @Override
+      public @Nullable
+      Icon getIcon(boolean b) {
+        return PropIcons.FILE;
+      }
+    };
+  }
+
 }

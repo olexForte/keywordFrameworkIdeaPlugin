@@ -1,12 +1,12 @@
 <idea-plugin>
   <id>com.fortegrp.keywordautomation</id>
   <name>Forte Test Automation</name>
-  <version>1.6</version>
+  <version>1.7</version>
   <vendor email="olex.dyachuk@fortegrp.com.com" url="http://www.fortegrp.com">ForteGRP</vendor>
 
   <description>Forte Test Automation Plugin for keyword-based framework</description>
 
-  <change-notes>Forte Test Automation Plugin for keyword-based framework</change-notes>
+  <change-notes>Forte Test Automation Plugin for keyword-based framework. Update for version 2020.3</change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
   <idea-version since-build="173.0"/>

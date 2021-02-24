@@ -18,8 +18,8 @@ public class CTPropertyReference extends PsiReferenceBase<PsiElement> implements
     private final String key;
 
     public CTPropertyReference(@NotNull PsiElement element, TextRange textRange) {
-        super(element, textRange);
-        key = element.getText().substring(textRange.getStartOffset(), textRange.getEndOffset());
+        super(element, (element.getText().contains(":") ? textRange.grown(-1) : textRange));
+        key = element.getText().substring(textRange.getStartOffset(), textRange.getEndOffset()).replace(":", "");
     }
 
     @NotNull
