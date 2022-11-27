@@ -1,9 +1,9 @@
 // This is a generated file. Not intended for manual editing.
-package proplang.parser;
+package main.java.proplang.parser;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-import static proplang.psi.PropTypes.*;
+import static main.java.proplang.psi.PropTypes.*;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.lang.ASTNode;

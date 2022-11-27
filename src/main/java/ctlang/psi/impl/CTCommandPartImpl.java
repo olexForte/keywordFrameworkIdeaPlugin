@@ -1,5 +1,5 @@
 // This is a generated file. Not intended for manual editing.
-package ctlang.psi.impl;
+package main.java.ctlang.psi.impl;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
-import static ctlang.psi.CTTypes.*;
+import static main.java.ctlang.psi.CTTypes.*;
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import ctlang.psi.*;
+import main.java.ctlang.psi.*;
 
 public class CTCommandPartImpl extends ASTWrapperPsiElement implements CTCommandPart {
 

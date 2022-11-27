@@ -1,10 +1,10 @@
 // This is a generated file. Not intended for manual editing.
-package scriptslang.psi;
+package main.java.scriptslang.psi;
 
 import org.jetbrains.annotations.*;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.PsiElement;
-import scriptslang.SCTNamedElement;
+import main.java.scriptslang.SCTNamedElement;
 
 public class SCTVisitor extends PsiElementVisitor {
 

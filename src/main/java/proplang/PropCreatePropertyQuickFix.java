@@ -1,4 +1,4 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
@@ -19,8 +19,8 @@ import com.intellij.psi.search.FileTypeIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
 
-import proplang.psi.PropFile;
-import proplang.psi.PropProp;
+import main.java.proplang.psi.PropFile;
+import main.java.proplang.psi.PropProp;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;

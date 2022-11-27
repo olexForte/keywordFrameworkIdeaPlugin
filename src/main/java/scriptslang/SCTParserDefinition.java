@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
@@ -13,9 +13,9 @@ import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
 
 
-import scriptslang.parser.SCTParser;
-import scriptslang.psi.SCTFile;
-import scriptslang.psi.SCTTypes;
+import main.java.scriptslang.parser.SCTParser;
+import main.java.scriptslang.psi.SCTFile;
+import main.java.scriptslang.psi.SCTTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class SCTParserDefinition implements ParserDefinition {

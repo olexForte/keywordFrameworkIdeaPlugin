@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
@@ -7,8 +7,8 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IElementType;
-import ctlang.CTLexerAdapter;
-import ctlang.psi.CTTypes;
+import main.java.ctlang.CTLexerAdapter;
+import main.java.ctlang.psi.CTTypes;
 import org.jetbrains.annotations.NotNull;
 
 import static com.intellij.openapi.editor.colors.TextAttributesKey.createTextAttributesKey;

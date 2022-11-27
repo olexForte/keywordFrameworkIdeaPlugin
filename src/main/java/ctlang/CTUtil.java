@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.project.Project;
@@ -10,9 +10,9 @@ import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.stubs.StubIndexImpl;
 import com.intellij.psi.util.PsiTreeUtil;
-import proplang.PropFileType;
-import proplang.psi.PropProp;
-import proplang.psi.impl.PropPropImpl;
+import main.java.proplang.PropFileType;
+import main.java.proplang.psi.PropProp;
+import main.java.proplang.psi.impl.PropPropImpl;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;

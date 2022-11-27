@@ -1,10 +1,10 @@
-package ctlang.psi.impl;
+package main.java.ctlang.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
-import ctlang.CTElementFactory;
-import ctlang.psi.CTProperty;
-import ctlang.psi.CTTypes;
+import main.java.ctlang.CTElementFactory;
+import main.java.ctlang.psi.CTProperty;
+import main.java.ctlang.psi.CTTypes;
 
 public class CTPsiImplUtil {
     public static String getKey(CTProperty element) {

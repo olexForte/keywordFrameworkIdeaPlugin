@@ -1,6 +1,6 @@
 
 import com.intellij.psi.tree.IElementType;
-import proplang.psi.PropTypes;
+import main.java.proplang.psi.PropTypes;
 import com.intellij.psi.TokenType;
 
 %%

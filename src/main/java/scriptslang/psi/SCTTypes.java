@@ -1,10 +1,10 @@
 // This is a generated file. Not intended for manual editing.
-package scriptslang.psi;
+package main.java.scriptslang.psi;
 
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.PsiElement;
 import com.intellij.lang.ASTNode;
-import scriptslang.psi.impl.*;
+import main.java.scriptslang.psi.impl.*;
 
 public interface SCTTypes {
 

@@ -1,9 +1,9 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.patterns.PlatformPatterns;
 import com.intellij.psi.*;
 import org.jetbrains.annotations.NotNull;
-import scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.SCTScriptfile;
 
 
 public class SCTReferenceContributor extends PsiReferenceContributor {

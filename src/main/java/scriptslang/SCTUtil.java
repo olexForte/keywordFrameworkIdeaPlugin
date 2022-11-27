@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -7,8 +7,8 @@ import com.intellij.psi.PsiManager;
 import com.intellij.psi.search.FileTypeIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 
-import ctlang.CTFileType;
-import ctlang.psi.CTFile;
+import main.java.ctlang.CTFileType;
+import main.java.ctlang.psi.CTFile;
 
 import java.util.ArrayList;
 import java.util.Collection;

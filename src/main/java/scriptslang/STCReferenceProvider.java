@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
@@ -7,7 +7,7 @@ import com.intellij.psi.PsiReference;
 import com.intellij.psi.PsiReferenceProvider;
 import com.intellij.util.ProcessingContext;
 import org.jetbrains.annotations.NotNull;
-import scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.SCTScriptfile;
 
 public class STCReferenceProvider extends PsiReferenceProvider {
 

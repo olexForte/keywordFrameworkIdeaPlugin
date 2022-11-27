@@ -1,4 +1,4 @@
-package ctlang.psi;
+package main.java.ctlang.psi;
 
 
 import com.intellij.psi.PsiNameIdentifierOwner;

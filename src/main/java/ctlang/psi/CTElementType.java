@@ -1,7 +1,7 @@
-package ctlang.psi;
+package main.java.ctlang.psi;
 
 import com.intellij.psi.tree.IElementType;
-import ctlang.CTLanguage;
+import main.java.ctlang.CTLanguage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

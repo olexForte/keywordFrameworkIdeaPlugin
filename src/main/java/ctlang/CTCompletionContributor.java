@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.codeInsight.completion.*;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
@@ -7,9 +7,9 @@ import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.util.ProcessingContext;
-import ctlang.psi.CTTypes;
+import main.java.ctlang.psi.CTTypes;
 import org.jetbrains.annotations.NotNull;
-import proplang.psi.PropProp;
+import main.java.proplang.psi.PropProp;
 
 import java.util.List;
 

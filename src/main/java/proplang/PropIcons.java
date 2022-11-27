@@ -1,4 +1,4 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.openapi.util.IconLoader;
 

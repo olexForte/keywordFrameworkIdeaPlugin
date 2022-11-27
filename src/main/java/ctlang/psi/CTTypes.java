@@ -1,10 +1,10 @@
 // This is a generated file. Not intended for manual editing.
-package ctlang.psi;
+package main.java.ctlang.psi;
 
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.PsiElement;
 import com.intellij.lang.ASTNode;
-import ctlang.psi.impl.*;
+import main.java.ctlang.psi.impl.*;
 
 public interface CTTypes {
 

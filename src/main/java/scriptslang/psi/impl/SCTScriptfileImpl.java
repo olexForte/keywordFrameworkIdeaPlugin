@@ -1,5 +1,5 @@
 // This is a generated file. Not intended for manual editing.
-package scriptslang.psi.impl;
+package main.java.scriptslang.psi.impl;
 
 import java.util.List;
 
@@ -10,10 +10,10 @@ import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
-import static scriptslang.psi.SCTTypes.*;
+import static main.java.scriptslang.psi.SCTTypes.*;
 
-import scriptslang.SCTNamedElementImpl;
-import scriptslang.psi.*;
+import main.java.scriptslang.SCTNamedElementImpl;
+import main.java.scriptslang.psi.*;
 
 public class SCTScriptfileImpl extends SCTNamedElementImpl implements SCTScriptfile {
 

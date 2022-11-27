@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;

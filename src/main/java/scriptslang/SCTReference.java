@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
@@ -8,8 +8,8 @@ import com.intellij.psi.*;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import scriptslang.psi.SCTScriptfile;
-import scriptslang.psi.impl.SCTScriptfileImpl;
+import main.java.scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.impl.SCTScriptfileImpl;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.openapi.fileTypes.SyntaxHighlighter;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterFactory;

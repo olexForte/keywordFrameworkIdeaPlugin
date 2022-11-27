@@ -1,10 +1,10 @@
-package proplang.psi;
+package main.java.proplang.psi;
 
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import proplang.PropFileType;
-import proplang.PropLanguage;
+import main.java.proplang.PropFileType;
+import main.java.proplang.PropLanguage;
 import org.jetbrains.annotations.NotNull;
 
 public class PropFile extends PsiFileBase {

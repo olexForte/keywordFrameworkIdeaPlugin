@@ -1,12 +1,12 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.lang.annotation.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
 
-import ctlang.psi.CTProperty;
-import proplang.psi.PropProp;
+import main.java.ctlang.psi.CTProperty;
+import main.java.proplang.psi.PropProp;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 

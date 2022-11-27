@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.lang.annotation.Annotation;
 import com.intellij.lang.annotation.AnnotationHolder;
@@ -6,12 +6,12 @@ import com.intellij.lang.annotation.Annotator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.PsiElement;
-//import ctlang.CTCreatePropertyQuickFix;
+//import main.java.ctlang.CTCreatePropertyQuickFix;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiLiteralExpression;
-import ctlang.psi.*;
+import main.java.ctlang.psi.*;
 import org.jetbrains.annotations.NotNull;
-import proplang.psi.PropProp;
+import main.java.proplang.psi.PropProp;
 
 import java.util.List;
 

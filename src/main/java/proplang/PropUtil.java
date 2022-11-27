@@ -1,4 +1,4 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -6,11 +6,11 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
 import com.intellij.psi.search.*;
 import com.intellij.psi.util.PsiTreeUtil;
-import ctlang.CTFileType;
-import ctlang.psi.CTFile;
-import ctlang.psi.CTProperty;
-import proplang.psi.PropProp;
-import proplang.psi.PropFile;
+import main.java.ctlang.CTFileType;
+import main.java.ctlang.psi.CTFile;
+import main.java.ctlang.psi.CTProperty;
+import main.java.proplang.psi.PropProp;
+import main.java.proplang.psi.PropFile;
 
 
 import java.util.*;
@@ -39,6 +39,9 @@ public class PropUtil {
 
     public static List<CTProperty> findProperties(Project project, PsiFile file) {
         List<CTProperty> result = new ArrayList<>();
+        if(file.getVirtualFile() == null){
+            return result;
+        }
         String fileName = file.getVirtualFile().getNameWithoutExtension();
         Collection<VirtualFile> virtualFiles =
                 FileTypeIndex.getFiles(CTFileType.INSTANCE, GlobalSearchScope.allScope(project));

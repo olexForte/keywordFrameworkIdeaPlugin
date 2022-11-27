@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 import com.intellij.lexer.FlexAdapter;
 
 import java.io.Reader;

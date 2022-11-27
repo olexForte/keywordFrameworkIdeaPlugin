@@ -1,7 +1,7 @@
 
 import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.TokenType;
-import ctlang.psi.CTTypes;
+import main.java.ctlang.psi.CTTypes;
 
 %%
 

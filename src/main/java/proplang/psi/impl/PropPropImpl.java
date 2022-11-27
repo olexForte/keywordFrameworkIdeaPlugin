@@ -1,5 +1,5 @@
 // This is a generated file. Not intended for manual editing.
-package proplang.psi.impl;
+package main.java.proplang.psi.impl;
 
 import java.util.List;
 
@@ -11,11 +11,11 @@ import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiElementVisitor;
 import com.intellij.psi.util.PsiTreeUtil;
-import static proplang.psi.PropTypes.*;
+import static main.java.proplang.psi.PropTypes.*;
 
-import proplang.PropIcons;
-import proplang.PropNamedElementImpl;
-import proplang.psi.*;
+import main.java.proplang.PropIcons;
+import main.java.proplang.PropNamedElementImpl;
+import main.java.proplang.psi.*;
 
 import javax.swing.*;
 

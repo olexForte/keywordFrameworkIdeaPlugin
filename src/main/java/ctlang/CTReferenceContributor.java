@@ -1,19 +1,19 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.openapi.util.TextRange;
 import com.intellij.patterns.PlatformPatterns;
 import com.intellij.psi.*;
 import com.intellij.util.ProcessingContext;
-import ctlang.psi.CTCommand;
-import ctlang.psi.CTCommandPart;
-import ctlang.psi.CTProperty;
-import ctlang.psi.CTTag;
+import main.java.ctlang.psi.CTCommand;
+import main.java.ctlang.psi.CTCommandPart;
+import main.java.ctlang.psi.CTProperty;
+import main.java.ctlang.psi.CTTag;
 import org.jetbrains.annotations.NotNull;
-import proplang.PropReference;
-import proplang.psi.PropProp;
-import scriptslang.SCTLanguage;
-import scriptslang.STCReferenceProvider;
-import scriptslang.psi.SCTScriptfile;
+import main.java.proplang.PropReference;
+import main.java.proplang.psi.PropProp;
+import main.java.scriptslang.SCTLanguage;
+import main.java.scriptslang.STCReferenceProvider;
+import main.java.scriptslang.psi.SCTScriptfile;
 
 import static com.intellij.patterns.PlatformPatterns.psiElement;
 

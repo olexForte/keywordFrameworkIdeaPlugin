@@ -1,10 +1,10 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFileFactory;
-import proplang.psi.PropFile;
-import proplang.psi.PropProp;
+import main.java.proplang.psi.PropFile;
+import main.java.proplang.psi.PropProp;
 
 public class PropElementFactory {
     public static PropProp createProperty(Project project, String name) {

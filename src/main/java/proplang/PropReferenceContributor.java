@@ -1,4 +1,4 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.openapi.util.TextRange;
 import com.intellij.patterns.PlatformPatterns;
@@ -6,8 +6,8 @@ import com.intellij.psi.*;
 import com.intellij.util.ProcessingContext;
 import org.jetbrains.annotations.NotNull;
 
-import static proplang.PropAnnotator.CT_PREFIX_STR;
-import static proplang.PropAnnotator.CT_SEPARATOR_STR;
+import static main.java.proplang.PropAnnotator.CT_PREFIX_STR;
+import static main.java.proplang.PropAnnotator.CT_SEPARATOR_STR;
 
 
 public class PropReferenceContributor extends PsiReferenceContributor {

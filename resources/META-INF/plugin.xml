@@ -1,7 +1,7 @@
 <idea-plugin>
   <id>com.fortegrp.keywordautomation</id>
   <name>Forte Test Automation</name>
-  <version>1.7</version>
+  <version>1.8</version>
   <vendor email="olex.dyachuk@fortegrp.com.com" url="http://www.fortegrp.com">ForteGRP</vendor>
 
   <description>Forte Test Automation Plugin for keyword-based framework</description>
@@ -9,7 +9,7 @@
   <change-notes>Forte Test Automation Plugin for keyword-based framework. Update for version 2020.3</change-notes>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-  <idea-version since-build="173.0"/>
+  <idea-version since-build="183.0"/>
 
   <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
        on how to target different products -->
@@ -18,27 +18,27 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="PROP File" implementationClass="proplang.PropFileType"
+    <fileType name="PROP File" implementationClass="main.java.proplang.PropFileType"
               fieldName="INSTANCE" language="PROP" extensions="prop"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <lang.parserDefinition language="PROP"
-                           implementationClass="proplang.PropParserDefinition"/>
+                           implementationClass="main.java.proplang.PropParserDefinition"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <lang.syntaxHighlighterFactory language="PROP"
-                                   implementationClass="proplang.PropSyntaxHighlighterFactory"/>
+                                   implementationClass="main.java.proplang.PropSyntaxHighlighterFactory"/>
   </extensions>
 
 <!--  <extensions defaultExtensionNs="com.intellij">-->
 <!--    <completion.contributor language="PROP"-->
-<!--                            implementationClass="proplang.PropCompletionContributor"/>-->
+<!--                            implementationClass="main.java.proplang.PropCompletionContributor"/>-->
 <!--  </extensions>-->
 
 <!--  <extensions defaultExtensionNs="com.intellij">-->
-<!--    <annotator language="PROP" implementationClass="proplang.PropAnnotator"/>-->
+<!--    <annotator language="PROP" implementationClass="main.java.proplang.PropAnnotator"/>-->
 <!--  </extensions>-->
 
 <!--  <extensions defaultExtensionNs="com.intellij">-->
@@ -47,61 +47,61 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="CT File" implementationClass="ctlang.CTFileType"
+    <fileType name="CT File" implementationClass="main.java.ctlang.CTFileType"
               fieldName="INSTANCE" language="CT" extensions="ct"/>
   </extensions>
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Action CT File" implementationClass="ctlang.ACTFileType"
+    <fileType name="Action CT File" implementationClass="main.java.ctlang.ACTFileType"
               fieldName="INSTANCE" language="CT" extensions="act"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <lang.parserDefinition language="CT"
-                           implementationClass="ctlang.CTParserDefinition"/>
+                           implementationClass="main.java.ctlang.CTParserDefinition"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <lang.syntaxHighlighterFactory language="CT"
-                                   implementationClass="ctlang.CTSyntaxHighlighterFactory"/>
+                                   implementationClass="main.java.ctlang.CTSyntaxHighlighterFactory"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <completion.contributor language="CT"
-                            implementationClass="ctlang.CTCompletionContributor"/>
+                            implementationClass="main.java.ctlang.CTCompletionContributor"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <annotator language="CT" implementationClass="ctlang.CTAnnotator"/>
+    <annotator language="CT" implementationClass="main.java.ctlang.CTAnnotator"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
-    <psi.referenceContributor implementation="ctlang.CTReferenceContributor"/>
+    <psi.referenceContributor implementation="main.java.ctlang.CTReferenceContributor"/>
   </extensions>
 
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="CT Suite File" implementationClass="scriptslang.SCTFileType"
+    <fileType name="CT Suite File" implementationClass="main.java.scriptslang.SCTFileType"
               fieldName="INSTANCE" language="SCT" extensions="sct"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <lang.parserDefinition language="SCT"
-                           implementationClass="scriptslang.SCTParserDefinition"/>
+                           implementationClass="main.java.scriptslang.SCTParserDefinition"/>
   </extensions>
 
   <extensions defaultExtensionNs="com.intellij">
     <lang.syntaxHighlighterFactory language="SCT"
-                                   implementationClass="scriptslang.SCTSyntaxHighlighterFactory"/>
+                                   implementationClass="main.java.scriptslang.SCTSyntaxHighlighterFactory"/>
   </extensions>
 
     <extensions defaultExtensionNs="com.intellij">
-      <annotator language="SCT" implementationClass="scriptslang.SCTAnnotator"/>
+      <annotator language="SCT" implementationClass="main.java.scriptslang.SCTAnnotator"/>
     </extensions>
 
 
   <extensions defaultExtensionNs="com.intellij">
     <completion.contributor language="SCT"
-                            implementationClass="scriptslang.SCTCompletionContributor"/>
+                            implementationClass="main.java.scriptslang.SCTCompletionContributor"/>
   </extensions>
 
 <!--  <extensions defaultExtensionNs="com.intellij">-->

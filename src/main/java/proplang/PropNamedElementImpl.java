@@ -1,4 +1,4 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.extapi.psi.ASTWrapperPsiElement;
 import com.intellij.lang.ASTNode;

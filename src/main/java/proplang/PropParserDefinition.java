@@ -1,4 +1,4 @@
-package proplang;
+package main.java.proplang;
 
 import com.intellij.lang.*;
 import com.intellij.lexer.Lexer;
@@ -6,9 +6,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.tree.*;
 
-import proplang.parser.PropParser;
-import proplang.psi.PropFile;
-import proplang.psi.PropTypes;
+import main.java.proplang.parser.PropParser;
+import main.java.proplang.psi.PropFile;
+import main.java.proplang.psi.PropTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class PropParserDefinition implements ParserDefinition {

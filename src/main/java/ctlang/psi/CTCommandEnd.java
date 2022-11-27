@@ -1,5 +1,5 @@
 // This is a generated file. Not intended for manual editing.
-package ctlang.psi;
+package main.java.ctlang.psi;
 
 import java.util.List;
 import org.jetbrains.annotations.*;

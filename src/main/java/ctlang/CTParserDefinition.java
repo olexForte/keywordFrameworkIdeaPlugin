@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
@@ -11,11 +11,11 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.TokenType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.TokenSet;
-import ctlang.CTLanguage;
-import ctlang.CTLexerAdapter;
-import ctlang.parser.CTParser;
-import ctlang.psi.CTFile;
-import ctlang.psi.CTTypes;
+import main.java.ctlang.CTLanguage;
+import main.java.ctlang.CTLexerAdapter;
+import main.java.ctlang.parser.CTParser;
+import main.java.ctlang.psi.CTFile;
+import main.java.ctlang.psi.CTTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class CTParserDefinition implements ParserDefinition {

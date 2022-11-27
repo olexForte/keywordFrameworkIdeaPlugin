@@ -1,10 +1,10 @@
-package ctlang.psi;
+package main.java.ctlang.psi;
 
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import ctlang.CTFileType;
-import ctlang.CTLanguage;
+import main.java.ctlang.CTFileType;
+import main.java.ctlang.CTLanguage;
 import org.jetbrains.annotations.NotNull;
 
 public class CTFile extends PsiFileBase {

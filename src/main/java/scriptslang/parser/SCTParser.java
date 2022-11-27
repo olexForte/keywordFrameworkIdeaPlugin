@@ -1,9 +1,9 @@
 // This is a generated file. Not intended for manual editing.
-package scriptslang.parser;
+package main.java.scriptslang.parser;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-import static scriptslang.psi.SCTTypes.*;
+import static main.java.scriptslang.psi.SCTTypes.*;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.lang.ASTNode;

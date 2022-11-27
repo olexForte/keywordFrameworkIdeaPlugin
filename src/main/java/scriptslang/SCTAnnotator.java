@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.lang.annotation.Annotation;
 import com.intellij.lang.annotation.AnnotationHolder;
@@ -13,8 +13,8 @@ import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.psi.PsiWhiteSpace;
 import com.intellij.psi.impl.source.tree.LeafPsiElement;
 import org.jetbrains.annotations.NotNull;
-import scriptslang.psi.SCTScriptfile;
-import scriptslang.psi.SCTTokenType;
+import main.java.scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.SCTTokenType;
 
 import java.util.List;
 

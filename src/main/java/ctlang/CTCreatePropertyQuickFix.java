@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
@@ -19,8 +19,8 @@ import com.intellij.psi.search.FileTypeIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
 
-import ctlang.psi.CTFile;
-import ctlang.psi.CTProperty;
+import main.java.ctlang.psi.CTFile;
+import main.java.ctlang.psi.CTProperty;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;

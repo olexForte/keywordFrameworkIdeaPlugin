@@ -1,4 +1,4 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.codeInsight.intention.impl.BaseIntentionAction;
 import com.intellij.lang.ASTNode;
@@ -20,8 +20,8 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.IncorrectOperationException;
 
 import org.jetbrains.annotations.NotNull;
-import scriptslang.psi.SCTFile;
-import scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.SCTFile;
+import main.java.scriptslang.psi.SCTScriptfile;
 
 import java.util.Collection;
 

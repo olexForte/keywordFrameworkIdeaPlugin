@@ -1,7 +1,7 @@
-package proplang.psi;
+package main.java.proplang.psi;
 
 import com.intellij.psi.tree.IElementType;
-import proplang.PropLanguage;
+import main.java.proplang.PropLanguage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 

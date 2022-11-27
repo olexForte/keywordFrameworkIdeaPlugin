@@ -1,10 +1,10 @@
-package scriptslang.psi.impl;
+package main.java.scriptslang.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
-import scriptslang.SCTElementFactory;
-import scriptslang.psi.SCTScriptfile;
-import scriptslang.psi.SCTTypes;
+import main.java.scriptslang.SCTElementFactory;
+import main.java.scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.SCTTypes;
 
 public class SCTPsiImplUtil {
 

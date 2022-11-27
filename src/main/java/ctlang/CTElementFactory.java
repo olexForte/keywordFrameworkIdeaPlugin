@@ -1,10 +1,10 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFileFactory;
-import ctlang.psi.CTFile;
-import ctlang.psi.CTProperty;
+import main.java.ctlang.psi.CTFile;
+import main.java.ctlang.psi.CTProperty;
 
 
 public class CTElementFactory {

@@ -1,10 +1,10 @@
-package proplang.psi.impl;
+package main.java.proplang.psi.impl;
 
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
-import proplang.PropElementFactory;
-import proplang.psi.PropProp;
-import proplang.psi.PropTypes;
+import main.java.proplang.PropElementFactory;
+import main.java.proplang.psi.PropProp;
+import main.java.proplang.psi.PropTypes;
 
 public class PropPsiImplUtil {
     public static String getKey(PropProp element) {

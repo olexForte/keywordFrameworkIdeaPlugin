@@ -1,4 +1,4 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
@@ -9,11 +9,11 @@ import com.intellij.psi.*;
 import com.intellij.psi.search.FileTypeIndex;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.GlobalSearchScope;
-import ctlang.psi.impl.CTTagImpl;
+import main.java.ctlang.psi.impl.CTTagImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import proplang.PropFileType;
-import scriptslang.SCTUtil;
+import main.java.proplang.PropFileType;
+import main.java.scriptslang.SCTUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;

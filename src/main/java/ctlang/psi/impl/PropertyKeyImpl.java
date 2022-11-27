@@ -1,4 +1,4 @@
-package ctlang.psi.impl;
+package main.java.ctlang.psi.impl;
 
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.impl.source.resolve.reference.ReferenceProvidersRegistry;

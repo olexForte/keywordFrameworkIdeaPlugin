@@ -1,10 +1,10 @@
-package scriptslang;
+package main.java.scriptslang;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFileFactory;
-import scriptslang.psi.SCTFile;
-import scriptslang.psi.SCTScriptfile;
+import main.java.scriptslang.psi.SCTFile;
+import main.java.scriptslang.psi.SCTScriptfile;
 
 
 public class SCTElementFactory {

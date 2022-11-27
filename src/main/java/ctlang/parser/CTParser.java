@@ -1,9 +1,9 @@
 // This is a generated file. Not intended for manual editing.
-package ctlang.parser;
+package main.java.ctlang.parser;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiBuilder.Marker;
-import static ctlang.psi.CTTypes.*;
+import static main.java.ctlang.psi.CTTypes.*;
 import static com.intellij.lang.parser.GeneratedParserUtilBase.*;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.lang.ASTNode;

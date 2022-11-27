@@ -1,15 +1,15 @@
-package ctlang;
+package main.java.ctlang;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
-import ctlang.psi.impl.CTPropertyImpl;
+import main.java.ctlang.psi.impl.CTPropertyImpl;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import proplang.PropIcons;
-import proplang.psi.PropProp;
+import main.java.proplang.PropIcons;
+import main.java.proplang.psi.PropProp;
 
 import java.util.ArrayList;
 import java.util.List;

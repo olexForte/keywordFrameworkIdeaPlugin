@@ -1,7 +1,7 @@
-package scriptslang.psi;
+package main.java.scriptslang.psi;
 
 import com.intellij.psi.tree.IElementType;
-import scriptslang.SCTLanguage;
+import main.java.scriptslang.SCTLanguage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
